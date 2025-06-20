@@ -1,266 +1,506 @@
+<!-- /*
+* Bootstrap 5
+* Template Name: Furni
+* Template Author: Untree.co
+* Template URI: https://untree.co/
+* License: https://creativecommons.org/licenses/by/3.0/
+*/ -->
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Untree.co">
   <link rel="shortcut icon" href="images/OL logo.jpg">
+
   <meta name="description" content="" />
   <meta name="keywords" content="bootstrap, bootstrap4" />
 
-  <!-- Bootstrap & Styles -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <link href="css/tiny-slider.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
-  <title>BY ELIA</title>
-  <style>
-    /* Floating Buttons */
-    .chatbot-icon {
-      position: fixed; bottom: 20px; right: 20px;
-      background: #4CAF50; color: #fff;
-      font-size: 22px; padding: 12px 14px;
-      border-radius: 50%; cursor: pointer;
-      z-index: 9999; box-shadow: 0 0 8px rgba(0,0,0,0.3);
-    }
-    .chatbot-container {
-      display: none; position: fixed;
-      bottom: 80px; right: 20px; width: 270px;
-      background: #fff; border-radius: 10px;
-      box-shadow: 0 0 12px rgba(0,0,0,0.2);
-      z-index: 9999; font-family: Arial, sans-serif;
-    }
-    .chat-header {
-      background: #1c1c1c; color: #fff;
-      padding: 10px; font-weight: bold;
-      border-radius: 10px 10px 0 0;
-    }
-    .chat-body {
-      padding: 10px; max-height: 300px;
-      overflow-y: auto;
-    }
-    .chat-options button {
-      display: block; margin: 4px 0;
-      width: 100%; padding: 8px;
-      background: #f5f5f5; border: none;
-      border-radius: 4px; text-align: left;
-      cursor: pointer;
-    }
-    .chat-options button:hover { background: #e0e0e0; }
-    .whatsapp-button, .call-button {
-      position: fixed; left: 20px; z-index: 9999;
-    }
-    .whatsapp-button { bottom: 20px; }
-    .whatsapp-button img { width: 42px; height: 42px; }
-    .call-button {
-      bottom: 80px; text-decoration: none;
-    }
-    .call-icon-wrapper {
-      display: flex; align-items: center;
-      background: #fff; border: 1px solid #4CAF50;
-      border-radius: 20px; padding: 6px 12px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-      transition: background 0.3s;
-    }
-    .call-icon-wrapper img {
-      width: 24px; margin-right: 6px;
-    }
-    .call-text {
-      font-size: 14px; color: #4CAF50;
-      font-weight: bold;
-    }
-    .call-icon-wrapper:hover { background: #e8f5e9; }
-  </style>
-</head>
-<body>
+		<!-- Bootstrap CSS -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+		<link href="css/tiny-slider.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		<title>BY ELIA</title>
+	</head>
 
-  <!-- Header -->
-  <nav class="custom-navbar navbar navbar-expand-md navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">BY ELIA<span>.</span></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarsFurni">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li><a class="nav-link" href="shop.html">Shop</a></li>
-          <li><a class="nav-link" href="about.html">About us</a></li>
-          <li class="active"><a class="nav-link" href="services.html">Services</a></li>
-          <li><a class="nav-link" href="blog.html">Blog</a></li>
-          <li><a class="nav-link" href="contact.html">Contact us</a></li>
-        </ul>
-        <ul class="navbar-nav ms-5">
-          <li><a class="nav-link" href="#"><img src="images/user.svg"></a></li>
-          <li><a class="nav-link" href="cart.html"><img src="images/cart.svg"></a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+	<body>
 
-  <!-- Hero -->
-  <div class="hero">
-    <div class="container">
-      <div class="row justify-content-between">
-        <div class="col-lg-5">
-          <div class="intro-excerpt">
-            <h1>Services</h1>
-            <p class="mb-4">From personalized jewelry selection to secure delivery, we offer a complete shopping experience designed around your style, comfort, and trust. Whether you're buying for yourself or gifting someone special, our expert team is here to guide you every step of the way.</p>
-            <p><a href="shop.html" class="btn btn-secondary me-2">Shop Now</a><a href="#" class="btn btn-white-outline">Explore</a></p>
-          </div>
-        </div>
-        <div class="col-lg-7">
-          <div class="hero-img-wrap">
-            <img src="" class="img-fluid" alt="">
-          </div>
-        </div>
-      </div>
-    </div>
+		<!-- Start Header/Navigation -->
+		<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
+
+			<div class="container">
+				<a class="navbar-brand" href="index.html">BY ELIA<span>.</span></a>
+
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarsFurni">
+					<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+						<li class="nav-item">
+							<a class="nav-link" href="index.html">Home</a>
+						</li>
+						<li><a class="nav-link" href="shop.html">Shop</a></li>
+						<li><a class="nav-link" href="about.html">About us</a></li>
+						<li class="active"><a class="nav-link" href="services.html">Services</a></li>
+						<li><a class="nav-link" href="blog.html">Blog</a></li>
+						<li><a class="nav-link" href="contact.html">Contact us</a></li>
+					</ul>
+
+					<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+						<li><a class="nav-link" href="#"><img src="images/user.svg"></a></li>
+						<li><a class="nav-link" href="cart.html"><img src="images/cart.svg"></a></li>
+					</ul>
+				</div>
+			</div>
+				
+		</nav>
+		<!-- End Header/Navigation -->
+
+		<!-- Start Hero Section -->
+			<div class="hero">
+				<div class="container">
+					<div class="row justify-content-between">
+						<div class="col-lg-5">
+							<div class="intro-excerpt">
+								<h1>Services</h1>
+								<p class="mb-4">From personalized jewelry selection to secure delivery, we offer a complete shopping experience designed around your
+								style, comfort, and trust. Whether you're buying for yourself or gifting someone special, our expert team is here to
+								guide you every step of the way.</p>
+								<p><a href="shop.html" class="btn btn-secondary me-2">Shop Now</a><a href="#" class="btn btn-white-outline">Explore</a></p>
+							</div>
+						</div>
+						<div class="col-lg-7">
+							<div class="hero-img-wrap">
+								<img src="" class="img-fluid">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!-- End Hero Section -->
+
+		
+
+		<!-- Start Why Choose Us Section -->
+		<div class="why-choose-section">
+			<div class="container">
+				
+				
+				<div class="row my-5">
+					<div class="col-6 col-md-6">
+						<div class="feature">
+							<div class="icon">
+								<img src="images/truck.svg" alt="Image" class="imf-fluid">
+							</div>
+							<h3>Fast Shipping</h3>
+							<p>Because timeless beauty shouldn’t have to wait we ship quickly, so your sparkle arrives
+								right when you need it.</p>
+						</div>
+					</div>
+				
+					<div class="col-6 col-md-6">
+						<div class="feature">
+							<div class="icon">
+								<img src="images/bag.svg" alt="Image" class="imf-fluid">
+							</div>
+							<h3>Easy to Shop</h3>
+							<p>A smooth, stress-free shopping experience from browsing to checkout, it’s simple, secure,
+								and designed just for you.</p>
+						</div>
+					</div>
+				
+					<div class="col-6 col-md-6">
+						<div class="feature">
+							<div class="icon">
+								<img src="images/support.svg" alt="Image" class="imf-fluid">
+							</div>
+							<h3>24/7 Support</h3>
+							<p>We're always here for you. Day or night, our support team is ready to assist with any
+								questions, orders, or concerns.</p>
+						</div>
+					</div>
+				
+					<div class="col-6 col-md-6">
+						<div class="feature">
+							<div class="icon">
+								<img src="images/return.svg" alt="Image" class="imf-fluid">
+							</div>
+							<h3>Hassle Free Returns</h3>
+							<p>Changed your mind No problem. Enjoy easy, no-stress returns within our return window your
+								satisfaction is guaranteed.</p>
+						</div>
+					</div>
+				
+				</div>
+			
+			</div>
+		</div>
+		<!-- End Why Choose Us Section -->
+
+		<!-- Start Product Section -->
+		<div class="product-section">
+			<div class="container">
+				<div class="row">
+		
+					<!-- Start Column 1 -->
+					<div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
+						<h2 class="mb-4 section-title">💎 Every Piece Tells a Story Make Yours Unforgettable</h2>
+						<p class="mb-4">we craft memories. Whether you're marking a milestone, gifting someone special, or
+							treating yourself, our collections
+							are designed to celebrate life's most meaningful moments with beauty and brilliance. </p>
+						<p><a href="shop.html" class="btn">Explore</a></p>
+					</div>
+					<!-- End Column 1 -->
+		
+					<!-- Start Column 2 -->
+					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
+						<a class="product-item" href="shop.html">
+							<img src="images/Ear1.jpg" class="img-fluid product-thumbnail">
+							<h3 class="product-title">Earings</h3>
+							<strong class="product-price">Ksh 200.00</strong>
+		
+							<span class="icon-cross">
+								<img src="images/cross.svg" class="img-fluid">
+							</span>
+							<button class="btn btn-sm btn-primary add-to-cart mt-2" data-name="Nordic Chair" data-price="50.00"
+								data-image="images/product-1.png">shop now</button>
+						</a>
+					</div>
+					<!-- End Column 2 -->
+		
+					<!-- Start Column 3 -->
+					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
+						<a class="product-item" href="shop.html">
+							<img src="images/ring.jpg" class="img-fluid product-thumbnail">
+							<h3 class="product-title">Rings</h3>
+							<strong class="product-price">Ksh 180.00</strong>
+		
+		
+							<span class="icon-cross">
+								<img src="images/cross.svg" class="img-fluid">
+							</span>
+							<button class="btn btn-sm btn-primary add-to-cart mt-2" data-name="Nordic Chair" data-price="50.00"
+								data-image="images/product-1.png">shop now</button>
+						</a>
+					</div>
+					<!-- End Column 3 -->
+		
+					<!-- Start Column 4 -->
+					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
+						<a class="product-item" href="shop.html">
+							<img src="images/watch.jpg" class="img-fluid product-thumbnail">
+							<h3 class="product-title">Casio</h3>
+							<strong class="product-price">Ksh2,000.00</strong>
+							<button class="btn btn-sm btn-primary add-to-cart mt-2" data-name="Nordic Chair" data-price="50.00"
+								data-image="images/product-1.png">shop now</button>
+		
+							<span class="icon-cross">
+								<img src="images/cross.svg" class="img-fluid">
+							</span>
+						</a>
+					</div>
+					<!-- End Column 4 -->
+		
+				</div>
+			</div>
+		</div>
+		<!-- End Product Section -->
+
+		
+
+		
+
+		
+
+		<!-- Start Footer Section -->
+		<footer class="footer-section">
+			<div class="container relative">
+		
+				<div class="sofa-img">
+					<img src="images/OL logo.jpg" alt="Image" class="img-fluid">
+				</div>
+		
+				<div class="row">
+					<div class="col-lg-8">
+						<div class="subscription-form">
+							<h3 class="d-flex align-items-center"><span class="me-1"><img src="images/envelope-outline.svg"
+										alt="Image" class="img-fluid"></span><span>Subscribe to Newsletter</span></h3>
+		
+							<form action="#" class="row g-3">
+								<div class="col-auto">
+									<input type="text" class="form-control" placeholder="Enter your name">
+								</div>
+								<div class="col-auto">
+									<input type="email" class="form-control" placeholder="Enter your email">
+								</div>
+								<div class="col-auto">
+									<button class="btn btn-primary">
+										<span class="fa fa-paper-plane"></span>
+									</button>
+								</div>
+							</form>
+		
+						</div>
+					</div>
+				</div>
+		
+				<div class="row g-5 mb-5">
+					<div class="col-lg-4">
+						<div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">BY ELIA<span>.</span></a></div>
+						<p class="mb-4">we believe jewelry is more than an accessory it's a statement of your story. Explore our
+							handcrafted collections of
+							exquisite rings, necklaces, bracelets, and earrings designed to celebrate your unique moments. ✨
+							Ethically sourced.
+							Uniquely yours. Perfectly timeless. Start your sparkle journey withus today.</p>
+		
+						<ul class="list-unstyled custom-social">
+							<li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
+							<li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
+							<li><a href="https://www.instagram.com/__by.elia__?igsh=MThvYjBvZG5xZGI0dw%3D%3D&utm_source=qr"><span
+										class="fa fa-brands fa-instagram"></span></a></li>
+							<li><a href="https://www.tiktok.com/@__by.elia__?_t=ZM-8xKn14BjXsO&_r=1"><span
+										class="fa fa-brands fa-tiktok"></span></a></li>
+						</ul>
+					</div>
+		
+					<div class="col-lg-8">
+						<div class="row links-wrap">
+							<div class="col-6 col-sm-6 col-md-3">
+								<ul class="list-unstyled">
+									<li><a href="about.html">About us</a></li>
+									<li><a href="services.html">Services</a></li>
+									<li><a href="shop.html">shop now</a></li>
+									<li><a href="contact.html">Contact us</a></li>
+								</ul>
+							</div>
+		
+							<div class="col-6 col-sm-6 col-md-3">
+								<ul class="list-unstyled">
+									<li><a href="shop.html">shop</a></li>
+		
+									<li><a href="#">Live chat</a></li>
+								</ul>
+							</div>
+		
+		
+		
+		
+						</div>
+					</div>
+		
+				</div>
+		
+				<div class="border-top copyright">
+					<div class="row pt-4">
+						<div class="col-lg-6">
+							<p class="mb-2 text-center text-lg-start">Copyright &copy;
+								<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash;
+								Designed by Paps-designs <a href="Paps-Designs"></a> Tel <a hreff=" 0763497422"> 0763497422</a>
+								<!-- License information: https://untree.co/license/ -->
+							</p>
+						</div>
+		
+		
+		
+					</div>
+				</div>
+		
+			</div>
+		</footer>
+		<!-- End Footer Section -->	
+
+
+		<script src="js/bootstrap.bundle.min.js"></script>
+		<script src="js/tiny-slider.js"></script>
+		<script src="js/custom.js"></script>
+    <!-- Assistant, WhatsApp & Call Buttons -->
+
+<!-- Assistant Button with 💬 Emoji -->
+<div class="chatbot-icon" onclick="toggleChat()" title="Chat Assistant">
+	💬
   </div>
-
-  <!-- Why Choose Us -->
-  <div class="why-choose-section py-5">
-    <div class="container">
-      <div class="row g-4">
-        <div class="col-6 col-md-6"><div class="feature text-center"><img src="images/truck.svg" alt="" class="img-fluid mb-2"><h3>Fast Shipping</h3><p>Because timeless beauty shouldn’t have to wait, we ship quickly.</p></div></div>
-        <div class="col-6 col-md-6"><div class="feature text-center"><img src="images/bag.svg" alt="" class="img-fluid mb-2"><h3>Easy to Shop</h3><p>A smooth, stress-free shopping experience from browsing to checkout.</p></div></div>
-        <div class="col-6 col-md-6"><div class="feature text-center"><img src="images/support.svg" alt="" class="img-fluid mb-2"><h3>24/7 Support</h3><p>We're always here for you. Day or night.</p></div></div>
-        <div class="col-6 col-md-6"><div class="feature text-center"><img src="images/return.svg" alt="" class="img-fluid mb-2"><h3>Hassle Free Returns</h3><p>Changed your mind? Enjoy no‑stress returns within our window.</p></div></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Product Section -->
-  <div class="product-section py-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3 mb-5">
-          <h2 class="section-title mb-4">💎 Every Piece Tells a Story</h2>
-          <p>Craft memories. Celebrate life's meaningful moments with beauty and brilliance.</p>
-          <p><a href="shop.html" class="btn btn-primary">Explore</a></p>
-        </div>
-
-        <div class="col-md-4 col-lg-3 mb-5">
-          <div class="product-item text-center">
-            <img src="images/Ear1.jpg" alt="" class="img-fluid product-thumbnail mb-2">
-            <h3 class="product-title">Earrings</h3>
-            <strong class="product-price">Ksh 200.00</strong>
-            <button class="btn btn-sm btn-primary mt-2 add-to-cart" data-name="Earrings" data-price="200.00" data-image="images/Ear1.jpg">Shop Now</button>
-          </div>
-        </div>
-
-        <div class="col-md-4 col-lg-3 mb-5">
-          <div class="product-item text-center">
-            <img src="images/ring.jpg" alt="" class="img-fluid product-thumbnail mb-2">
-            <h3 class="product-title">Rings</h3>
-            <strong class="product-price">Ksh 180.00</strong>
-            <button class="btn btn-sm btn-primary mt-2 add-to-cart" data-name="Ring" data-price="180.00" data-image="images/ring.jpg">Shop Now</button>
-          </div>
-        </div>
-
-        <div class="col-md-4 col-lg-3 mb-5">
-          <div class="product-item text-center">
-            <img src="images/watch.jpg" alt="" class="img-fluid product-thumbnail mb-2">
-            <h3 class="product-title">Casio Watch</h3>
-            <strong class="product-price">Ksh 2,000.00</strong>
-            <button class="btn btn-sm btn-primary mt-2 add-to-cart" data-name="Casio Watch" data-price="2000.00" data-image="images/watch.jpg">Shop Now</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer class="footer-section py-5">
-    <div class="container">
-      <div class="row g-5">
-        <div class="col-lg-4">
-          <a class="footer-logo mb-4 d-block" href="#">BY ELIA.</a>
-          <p>We believe jewelry is more than an accessory—it’s a statement of your story.</p>
-          <ul class="list-unstyled custom-social d-flex gap-3 mt-3">
-            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://instagram.com/__by.elia__"><i class="fab fa-instagram"></i></a></li>
-            <li><a href="https://tiktok.com/@__by.elia__"><i class="fab fa-tiktok"></i></a></li>
-          </ul>
-        </div>
-        <div class="col-lg-8">
-          <div class="row">
-            <div class="col-6 col-md-3">
-              <ul class="list-unstyled">
-                <li><a href="about.html">About us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="shop.html">Shop now</a></li>
-                <li><a href="contact.html">Contact us</a></li>
-              </ul>
-            </div>
-            <div class="col-6 col-md-3">
-              <ul class="list-unstyled">
-                <li><a href="#">Live chat</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms & Conditions</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="border-top pt-4 mt-4 text-center">
-        <p>&copy; <script>document.write(new Date().getFullYear());</script> BY ELIA. Designed by Paps-designs. Tel: 0763‑497‑422</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Floating Controls -->
-  <div class="chatbot-icon" onclick="toggleChat()" title="Chat Assistant">💬</div>
-
+  
+  <!-- Chat Popup -->
   <div class="chatbot-container" id="chat-container">
-    <div class="chat-header">💬 Virtual Jewelry Assistant</div>
-    <div class="chat-body" id="chat-body">
-      <div class="chat-message bot">Hi! I'm your jewelry assistant. Ask me anything 💎</div>
-      <div class="chat-options">
-        <button onclick="respond('ring-size')">What ring size is best?</button>
-        <button onclick="respond('return-policy')">How do I return an item?</button>
-        <button onclick="respond('order-tracking')">When will my order arrive?</button>
-        <button onclick="respond('payment')">Payment methods?</button>
-        <button onclick="respond('contact')">Contact customer support</button>
-      </div>
-    </div>
+	<div class="chat-header">💬 Virtual Jewelry Assistant</div>
+	<div class="chat-body" id="chat-body">
+	  <div class="chat-message bot">Hi! I'm your jewelry assistant. Ask me anything 💎</div>
+	  <div class="chat-options">
+		<button onclick="respond('ring-size')">What ring size is best?</button>
+		<button onclick="respond('return-policy')">How do I return an item?</button>
+		<button onclick="respond('order-tracking')">When will my order arrive?</button>
+		<button onclick="respond('payment')">Payment methods?</button>
+		<button onclick="respond('contact')">Contact customer support</button>
+	  </div>
+	</div>
   </div>
-
+  
+  <!-- WhatsApp Button -->
   <a href="https://wa.me/254700000000" target="_blank" class="whatsapp-button" title="Chat on WhatsApp">
-    <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp">
+	<img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp">
   </a>
-
+  
+  <!-- Stylish Call Button -->
   <a href="tel:+254700000000" class="call-button" title="Call Us">
-    <div class="call-icon-wrapper">
-      <img src="https://img.icons8.com/color/48/4CAF50/phone.png" alt="Call">
-      <span class="call-text">Call Us</span>
-    </div>
+	<div class="call-icon-wrapper">
+	  <img src="https://img.icons8.com/color/48/4CAF50/phone.png" alt="Call">
+	  <span class="call-text"></span>
+	</div>
   </a>
-
+  
+  <!-- CSS -->
+  <style>
+	/* Assistant Icon 💬 */
+	.chatbot-icon {
+	  position: fixed;
+	  bottom: 20px;
+	  right: 20px;
+	  background-color: #4CAF50;
+	  color: #fff;
+	  font-size: 22px;
+	  padding: 12px 14px;
+	  border-radius: 50%;
+	  cursor: pointer;
+	  z-index: 9999;
+	  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+	}
+  
+	/* Chat Popup Box */
+	.chatbot-container {
+	  display: none;
+	  position: fixed;
+	  bottom: 80px;
+	  right: 20px;
+	  width: 270px;
+	  background: #fff;
+	  border-radius: 10px;
+	  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+	  z-index: 9999;
+	  font-family: Arial, sans-serif;
+	}
+  
+	.chat-header {
+	  background-color: #1c1c1c;
+	  color: #fff;
+	  padding: 10px;
+	  font-weight: bold;
+	  border-radius: 10px 10px 0 0;
+	}
+  
+	.chat-body {
+	  padding: 10px;
+	  max-height: 300px;
+	  overflow-y: auto;
+	}
+  
+	.chat-message {
+	  margin-bottom: 10px;
+	}
+  
+	.chat-options button {
+	  display: block;
+	  margin: 4px 0;
+	  width: 100%;
+	  padding: 8px;
+	  background: #f5f5f5;
+	  border: none;
+	  border-radius: 4px;
+	  text-align: left;
+	  cursor: pointer;
+	}
+  
+	.chat-options button:hover {
+	  background-color: #e0e0e0;
+	}
+  
+	/* WhatsApp */
+	.whatsapp-button {
+	  position: fixed;
+	  bottom: 20px;
+	  left: 20px;
+	  z-index: 9999;
+	}
+  
+	.whatsapp-button img {
+	  width: 42px;
+	  height: 42px;
+	}
+  
+	/* Call Button */
+	.call-button {
+	  position: fixed;
+	  bottom: 80px;
+	  left: 20px;
+	  z-index: 9999;
+	  text-decoration: none;
+	}
+  
+	.call-icon-wrapper {
+	  display: flex;
+	  align-items: center;
+	  background-color: #fff;
+	  border: 1px solid #4CAF50;
+	  border-radius: 20px;
+	  padding: 6px 12px;
+	  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+	  transition: background 0.3s;
+	}
+  
+	.call-icon-wrapper img {
+	  width: 24px;
+	  margin-right: 6px;
+	}
+  
+	.call-text {
+	  font-size: 14px;
+	  color: #4CAF50;
+	  font-weight: bold;
+	}
+  
+	.call-icon-wrapper:hover {
+	  background-color: #e8f5e9;
+	}
+  </style>
+  
+  <!-- JavaScript -->
   <script>
-    function toggleChat() {
-      const chat = document.getElementById('chat-container');
-      chat.style.display = chat.style.display === 'block' ? 'none' : 'block';
-    }
-    function respond(type) {
-      let response = '';
-      switch(type) {
-        case 'ring-size': response = "Most women wear size 6–7. Use our chart or visit a jeweler for sizing."; break;
-        case 'return-policy': response = "Returns accepted within 7 days if unused and in original packaging."; break;
-        case 'order-tracking': response = "Orders ship within 1-2 days. You'll receive a tracking number via email/SMS."; break;
-        case 'payment': response = "We accept M-Pesa, PayPal, and major cards."; break;
-        case 'contact': response = "Call us: +254700000000 or WhatsApp us anytime."; break;
-        default: response = "Sorry, I didn’t understand that. Please try another question!";
-      }
-      const chatBody = document.getElementById('chat-body');
-      const msg = document.createElement('div');
-      msg.className = 'chat-message bot';
-      msg.textContent = response;
-      chatBody.appendChild(msg);
-      chatBody.scrollTop = chatBody.scrollHeight;
-    }
+	function toggleChat() {
+	  const chat = document.getElementById('chat-container');
+	  chat.style.display = chat.style.display === 'block' ? 'none' : 'block';
+	}
+  
+	function respond(type) {
+	  let response = '';
+	  switch (type) {
+		case 'ring-size':
+		  response = "Most women wear size 6–7. Use our chart or visit a jeweler for sizing.";
+		  break;
+		case 'return-policy':
+		  response = "Returns accepted within 7 days if unused and in original packaging.";
+		  break;
+		case 'order-tracking':
+		  response = "Orders ship within 1-2 days. You'll receive a tracking number via email or SMS.";
+		  break;
+		case 'payment':
+		  response = "We accept M-Pesa, PayPal, and major cards.";
+		  break;
+		case 'contact':
+		  response = "Call us: +254700000000 or WhatsApp us anytime.";
+		  break;
+		default:
+		  response = "Sorry, I didn’t understand that. Please try another question!";
+	  }
+  
+	  const chatBody = document.getElementById('chat-body');
+	  const message = document.createElement('div');
+	  message.className = 'chat-message bot';
+	  message.textContent = response;
+	  chatBody.appendChild(message);
+	  chatBody.scrollTop = chatBody.scrollHeight;
+	}
   </script>
+	</body>
 
-</body>
 </html>
