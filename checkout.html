@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>BY ELIA</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+	<!-- Navbar -->
+	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+		<!-- ... your navbar code ... -->
+	</nav>
+
+	<!-- Hero Section -->
+	<div class="hero">
+		<div class="container">
+			<h1>Checkout</h1>
+		</div>
+	</div>
+
+	<!-- Checkout Form & Order Review -->
+	<!-- Include jsPDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<div class="container my-5">
+  <form action="send_order.php" method="POST" id="checkout-form">
+    <div class="row">
+
+      <!-- Billing Details -->
+      <div class="col-md-6">
+        <h2>Billing Details</h2>
+        <div class="mb-3">
+          <label>First Name *</label>
+          <input type="text" class="form-control" name="c_fname" required>
+        </div>
+        <div class="mb-3">
+          <label>Last Name *</label>
+          <input type="text" class="form-control" name="c_lname" required>
+        </div>
+        <div class="mb-3">
+          <label>Address *</label>
+          <input type="text" class="form-control" name="c_address" required>
+        </div>
+        <div class="mb-3">
+          <label>Email Address *</label>
+          <input type="email" class="form-control" name="c_email_address" required>
+        </div>
+        <div class="mb-3">
+          <label>Phone *</label>
+          <input type="tel" class="form-control" name="c_phone" required>
+        </div>
+      </div>
+
+      <!-- Order Review -->
+      <div class="col-md-6">
+        <h2>Your Order</h2>
+        <table class="table mb-4">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody id="checkout-items">
+            <!-- Filled by JS -->
+          </tbody>
+          <tfoot>
+            <tr>
+              <th>Order Total</th>
+              <th id="checkout-total">Ksh 0.00</th>
+            </tr>
+          </tfoot>
+        </table>
+
+        <!-- Hidden inputs for backend -->
+        <input type="hidden" name="order_items" id="order_items_input">
+        <input type="hidden" name="order_total" id="order_total_input">
+
+        <button type="submit" class="btn btn-primary btn-lg">Place Order</button>
+      </div>
+
+    </div>
+  </form>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const itemsContainer = document.getElementById('checkout-items');
+    const totalEl = document.getElementById('checkout-total');
+    const hiddenItems = document.getElementById('order_items_input');
+    const hiddenTotal = document.getElementById('order_total_input');
+    const form = document.getElementById('checkout-form');
+
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let subtotal = 0;
+
+    cart.forEach(item => {
+      const lineTotal = item.price * item.quantity;
+      subtotal += lineTotal;
+
+      itemsContainer.insertAdjacentHTML('beforeend', `
+        <tr>
+          <td>${item.name} x${item.quantity}</td>
+          <td>Ksh ${lineTotal.toLocaleString()}</td>
+        </tr>
+      `);
+    });
+
+    totalEl.textContent = `Ksh ${subtotal.toLocaleString()}`;
+    hiddenItems.value = cart.map(item =>
+      `${item.name} x${item.quantity} = Ksh ${(item.price * item.quantity).toLocaleString()}`
+    ).join("\n");
+    hiddenTotal.value = `Ksh ${subtotal.toLocaleString()}`;
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const firstName = formData.get('c_fname');
+      const lastName = formData.get('c_lname');
+      const address = formData.get('c_address');
+      const email = formData.get('c_email_address');
+      const phone = formData.get('c_phone');
+      const items = hiddenItems.value;
+      const total = hiddenTotal.value;
+
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      doc.setFontSize(16);
+      doc.text("Jewelry Order Receipt", 20, 20);
+      doc.setFontSize(12);
+      doc.text(`Name: ${firstName} ${lastName}`, 20, 30);
+      doc.text(`Address: ${address}`, 20, 40);
+      doc.text(`Email: ${email}`, 20, 50);
+      doc.text(`Phone: ${phone}`, 20, 60);
+      doc.text("Order Items:", 20, 70);
+      doc.text(items, 20, 80);
+      doc.text(`Total: ${total}`, 20, 120);
+
+      // Save PDF
+      doc.save("Order_Receipt.pdf");
+
+      // Wait a moment then submit and redirect
+      setTimeout(() => {
+        form.submit(); // Submit to send_order.php
+        window.location.href = "thankyou.html"; // Redirect after submit
+      }, 1000);
+    });
+  });
+</script>
+	<!-- Footer -->
+	<footer class="footer-section">
+		<div class="container relative">
+
+			
+
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="subscription-form">
+						<h3 class="d-flex align-items-center"><span class="me-1"><img src="images/envelope-outline.svg" alt="Image" class="img-fluid"></span><span>Subscribe to Newsletter</span></h3>
+
+						<form action="#" class="row g-3">
+							<div class="col-auto">
+								<input type="text" class="form-control" placeholder="Enter your name">
+							</div>
+							<div class="col-auto">
+								<input type="email" class="form-control" placeholder="Enter your email">
+							</div>
+							<div class="col-auto">
+								<button class="btn btn-primary">
+									<span class="fa fa-paper-plane"></span>
+								</button>
+							</div>
+						</form>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="row g-5 mb-5">
+				<div class="col-lg-4">
+					<div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">BY ELIA<span>.</span></a></div>
+					<p class="mb-4">we believe jewelry is more than an accessory it's a statement of your story. Explore our handcrafted collections of
+					exquisite rings, necklaces, bracelets, and earrings designed to celebrate your unique moments. ✨ Ethically sourced.
+					Uniquely yours. Perfectly timeless. Start your sparkle journey withus today.</p>
+
+					<ul class="list-unstyled custom-social">
+						<li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
+						<li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
+						<li><a href="https://www.instagram.com/__by.elia__?igsh=MThvYjBvZG5xZGI0dw%3D%3D&utm_source=qr"><span class="fa fa-brands fa-instagram"></span></a></li>
+						<li><a href="https://www.tiktok.com/@__by.elia__?_t=ZM-8xKn14BjXsO&_r=1"><span class="fa fa-brands fa-tiktok"></span></a></li>
+					</ul>
+				</div>
+
+				<div class="col-lg-8">
+					<div class="row links-wrap">
+						<div class="col-6 col-sm-6 col-md-3">
+							<ul class="list-unstyled">
+								<li><a href="about.html">About us</a></li>
+								<li><a href="services.html">Services</a></li>
+								<li><a href="shop.html">shop now</a></li>
+								<li><a href="contact.html">Contact us</a></li>
+							</ul>
+						</div>
+
+						<div class="col-6 col-sm-6 col-md-3">
+							<ul class="list-unstyled">
+								<li><a href="shop.html">shop</a></li>
+			
+								<li><a href="#">Live chat</a></li>
+							</ul>
+						</div>
+
+						
+
+						
+					</div>
+				</div>
+
+			</div>
+
+			<div class="border-top copyright">
+				<div class="row pt-4">
+					<div class="col-lg-6">
+						<p class="mb-2 text-center text-lg-start">Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed  by Paps-designs <a href="Paps-Designs"></a> Tel <a hreff=" 0763497422"> 0763497422</a>  <!-- License information: https://untree.co/license/ -->
+		</p>
+					</div>
+
+					
+
+				</div>
+			</div>
+
+		</div>
+	</footer>
+		<!-- ... your footer code ... -->
+	
+
+	<!-- Scripts -->
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			const itemsContainer = document.getElementById('checkout-items');
+			const totalEl = document.getElementById('checkout-total');
+			const hiddenItems = document.getElementById('order_items_input');
+			const hiddenTotal = document.getElementById('order_total_input');
+
+			const cart = JSON.parse(localStorage.getItem('cart')) || [];
+			let subtotal = 0;
+
+			cart.forEach(item => {
+				const lineTotal = item.price * item.quantity;
+				subtotal += lineTotal;
+
+				const formattedLineTotal = lineTotal.toLocaleString('en-KE', { style: 'currency', currency: 'KES' });
+
+				itemsContainer.insertAdjacentHTML('beforeend', `
+	        <tr>
+	          <td>${item.name} x${item.quantity}</td>
+	          <td>${formattedLineTotal}</td>
+	        </tr>
+	      `);
+			});
+
+			const formattedSubtotal = subtotal.toLocaleString('en-KE', { style: 'currency', currency: 'KES' });
+			totalEl.textContent = formattedSubtotal;
+
+			hiddenItems.value = cart.map(item =>
+				`${item.name} x${item.quantity} = ${(item.price * item.quantity).toLocaleString('en-KE', { style: 'currency', currency: 'KES' })}`
+			).join("\n");
+
+			hiddenTotal.value = formattedSubtotal;
+		});
+	</script>
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/tiny-slider.js"></script>
+	<script src="js/custom.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,281 @@
+<!-- /*
+* Bootstrap 5
+* Template Name: Furni
+* Template Author: Untree.co
+* Template URI: https://untree.co/
+* License: https://creativecommons.org/licenses/by/3.0/
+*/ -->
+<!-- SHOP PAGE: Full HTML Code with Add to Cart Support -->
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="Untree.co">
+	<link rel="shortcut icon" href="images/OL logo.jpg">
+	<meta name="description" content="" />
+	<meta name="keywords" content="bootstrap, bootstrap4" />
+
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+	<link href="css/tiny-slider.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<title>BY ELIA Shop</title>
+</head>
+
+<body>
+
+	<!-- Navbar -->
+	<nav class="custom-navbar navbar navbar-expand-md navbar-dark bg-dark">
+		<div class="container">
+			<a class="navbar-brand" href="index.html">BY ELIA<span>.</span></a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarsFurni">
+				<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+					<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+					<li class="nav-item active"><a class="nav-link" href="shop.html">Shop</a></li>
+					<li><a class="nav-link" href="about.html">About us</a></li>
+					<li><a class="nav-link" href="services.html">Services</a></li>
+					<li><a class="nav-link" href="blog.html">Blog</a></li>
+					<li><a class="nav-link" href="contact.html">Contact us</a></li>
+				</ul>
+				<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+					<li><a class="nav-link" href="#"><img src="images/user.svg"></a></li>
+					<li><a class="nav-link" href="cart.html"><img src="images/cart.svg"></a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Hero -->
+	<div class="hero">
+		<div class="container">
+			<div class="row justify-content-between">
+				<div class="col-lg-5">
+					<div class="intro-excerpt">
+						<h1>Shop</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Ring Size Guide Section -->
+<section class="container my-5 py-4 border rounded mx-auto" style="max-width:600px;">
+	<h4 class="mb-3 text-center">💍 Find Your Ring Size</h4>
+  
+	<!-- Calculator Row -->
+	<div class="row gx-2 align-items-center mb-3">
+	  <div class="col-5">
+		<input type="number" id="diameter" class="form-control" placeholder="Diameter (mm)">
+	  </div>
+	  <div class="col-auto">
+		<button class="btn btn-primary" onclick="calcSize()">Calc</button>
+	  </div>
+	  <div class="col">
+		<input type="text" id="ringSizeUS" class="form-control" placeholder="US Size" readonly>
+	  </div>
+	  <div class="col">
+		<input type="text" id="ringSizeUK" class="form-control" placeholder="UK Size" readonly>
+	  </div>
+	</div>
+  
+	<!-- Reference Chart Image -->
+	
+  </section>
+  
+  <!-- JS Script -->
+  <script>
+  function calcSize() {
+	const dia = parseFloat(document.getElementById('diameter').value);
+	if (!dia || dia < 8 || dia > 25) {
+	  document.getElementById('ringSizeUS').value = 'Invalid';
+	  document.getElementById('ringSizeUK').value = '';
+	  return;
+	}
+  
+	// US size approximate
+	const us = ((dia - 11.63) / 0.812).toFixed(1);
+	document.getElementById('ringSizeUS').value = us;
+  
+	// Convert US to UK
+	const ukIndex = Math.round((parseFloat(us) + 0.5) * 2);
+	const ukSizes = ["-", "A", "A½", "B", "B½", "C", "C½", "D", "D½", "E", "E½", "F", "F½", "G", "G½", "H", "H½", "I", "I½", "J", "J½", "K", "K½", "L", "L½", "M", "M½", "N", "N½", "O", "O½", "P", "P½", "Q", "Q½", "R", "R½", "S", "S½", "T"];
+	document.getElementById('ringSizeUK').value = ukSizes[ukIndex] || '';
+  }
+  </script>
+  
+
+	<!-- Products -->
+	<div class="untree_co-section product-section before-footer-section">
+		<div class="container">
+			<div class="row">
+
+				<!-- Product Example -->
+				<div class="col-12 col-md-4 col-lg-3 mb-5">
+					<div class="product-item">
+						<img src="images/ring1.jpg" class="img-fluid product-thumbnail">
+						<h3 class="product-title">Ring Collection</h3>
+						<strong class="product-price">Ksh 50.00</strong>
+						<button class="btn btn-sm btn-primary add-to-cart mt-2" data-name="ring collection"
+							data-price="50.00" data-image="images/ring1.jpg">Add to Cart</button>
+					</div>
+				</div>
+
+				<div class="col-12 col-md-4 col-lg-3 mb-5">
+					<div class="product-item">
+						<img src="images/pr1.jpg" class="img-fluid product-thumbnail">
+						<h3 class="product-title">Bracelets</h3>
+						<strong class="product-price">Ksh 78.00</strong>
+						<button class="btn btn-sm btn-primary add-to-cart mt-2" data-name="Bracelets"
+							data-price="78.00" data-image="images/pr1.jpg">Add to Cart</button>
+					</div>
+				</div>
+				<div class="col-12 col-md-4 col-lg-3 mb-5">
+					<div class="product-item">
+						<img src="images/pr2.jpg" class="img-fluid product-thumbnail">
+						<h3 class="product-title">Necklace</h3>
+						<strong class="product-price">Ksh 50.00</strong>
+						<button class="btn btn-sm btn-primary add-to-cart mt-2" data-name="Necklace" data-price="50.00"
+							data-image="images/pr2.jpg">Add to Cart</button>
+					</div>
+				</div>
+				<div class="col-12 col-md-4 col-lg-3 mb-5">
+					<div class="product-item">
+						<img src="images/pr3.jpg" class="img-fluid product-thumbnail">
+						<h3 class="product-title">Earings</h3>
+						<strong class="product-price">Ksh 100.00</strong>
+						<button class="btn btn-sm btn-primary add-to-cart mt-2" data-name="Earings" data-price="78.00"
+							data-image="images/pr3.jpg">Add to Cart</button>
+					</div>
+				</div>
+				<div class="col-12 col-md-4 col-lg-3 mb-5">
+					<div class="product-item">
+						<img src="images/pr4.jpg" class="img-fluid product-thumbnail">
+						<h3 class="product-title">Earings</h3>
+						<strong class="product-price">Ksh 208.00</strong>
+						<button class="btn btn-sm btn-primary add-to-cart mt-2" data-name="necklace" data-price="78.00"
+							data-image="images/pr4.jpg">Add to Cart</button>
+					</div>
+				</div>
+				<div class="col-12 col-md-4 col-lg-3 mb-5">
+					<div class="product-item">
+						<img src="images/pr5.jpg" class="img-fluid product-thumbnail">
+						<h3 class="product-title">A</h3>
+						<strong class="product-price">Ksh 200.00</strong>
+						<button class="btn btn-sm btn-primary add-to-cart mt-2" data-name="A" data-price="200.00"
+							data-image="images/pr5.jpg">Add to Cart</button>
+					</div>
+				</div>
+				<div class="col-12 col-md-4 col-lg-3 mb-5">
+					<div class="product-item">
+						<img src="images/pr6.jpg" class="img-fluid product-thumbnail">
+						<h3 class="product-title">B</h3>
+						<strong class="product-price">Ksh 600.00</strong>
+						<button class="btn btn-sm btn-primary add-to-cart mt-2" data-name="B" data-price="600.00"
+							data-image="images/pr6.jpg">Add to Cart</button>
+					</div>
+				</div>
+				<div class="col-12 col-md-4 col-lg-3 mb-5">
+					<div class="product-item">
+						<img src="images/pr7.jpg" class="img-fluid product-thumbnail">
+						<h3 class="product-title">C</h3>
+						<strong class="product-price">Ksh 300.00</strong>
+						<button class="btn btn-sm btn-primary add-to-cart mt-2" data-name="C" data-price="300.00"
+							data-image="images/pr7.jpg">Add to Cart</button>
+					</div>
+				</div>
+				<div class="col-12 col-md-4 col-lg-3 mb-5">
+					<div class="product-item">
+						<img src="images/pr8.jpg" class="img-fluid product-thumbnail">
+						<h3 class="product-title">D </h3>
+						<strong class="product-price">Ksh 245.00</strong>
+						<button class="btn btn-sm btn-primary add-to-cart mt-2" data-name="D" data-price="245.00"
+							data-image="images/pr8.jpg">Add to Cart</button>
+					</div>
+				</div>
+				<div class="col-12 col-md-4 col-lg-3 mb-5">
+					<div class="product-item">
+						<img src="images/pr10.jpg" class="img-fluid product-thumbnail">
+						<h3 class="product-title">E</h3>
+						<strong class="product-price">Ksh 500.00</strong>
+						<button class="btn btn-sm btn-primary add-to-cart mt-2" data-name="E" data-price="500.00"
+							data-image="images/pr10.jpg">Add to Cart</button>
+					</div>
+				</div>
+				<div class="col-12 col-md-4 col-lg-3 mb-5">
+					<div class="product-item">
+						<img src="images/pr11.jpg" class="img-fluid product-thumbnail">
+						<h3 class="product-title">F</h3>
+						<strong class="product-price">Ksh 600.00</strong>
+						<button class="btn btn-sm btn-primary add-to-cart mt-2" data-name="F" data-price="600.00"
+							data-image="images/pr11.jpg">Add to Cart</button>
+					</div>
+				</div>
+				<div class="col-12 col-md-4 col-lg-3 mb-5">
+					<div class="product-item">
+						<img src="images/pr12.jpg" class="img-fluid product-thumbnail">
+						<h3 class="product-title">G</h3>
+						<strong class="product-price">Ksh 608.00</strong>
+						<button class="btn btn-sm btn-primary add-to-cart mt-2" data-name="G" data-price="608.00"
+							data-image="images/pr12.jpg">Add to Cart</button>
+					</div>
+				</div>
+
+				<!-- Add more products the same way... -->
+
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<footer class="footer-section">
+		<div class="container relative">
+			<!-- Footer content here -->
+			<div class="border-top copyright">
+				<div class="row pt-4">
+					<div class="col-lg-6 text-center text-lg-start">
+						<p>&copy;
+							<script>document.write(new Date().getFullYear());</script> BY ELIA. All Rights Reserved.
+						</p>
+					</div>
+					<div class="col-lg-6 text-center text-lg-end">
+						<ul class="list-unstyled d-inline-flex">
+							<li class="me-4"><a href="#">Terms</a></li>
+							<li><a href="#">Privacy</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			document.querySelectorAll(".add-to-cart").forEach(button => {
+				button.addEventListener("click", function () {
+					const name = this.getAttribute("data-name");
+					const price = parseFloat(this.getAttribute("data-price"));
+					const image = this.getAttribute("data-image");
+					const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+					const existing = cart.find(item => item.name === name);
+					if (existing) {
+						existing.quantity++;
+					} else {
+						cart.push({ name, price, image, quantity: 1 });
+					}
+
+					localStorage.setItem("cart", JSON.stringify(cart));
+					alert(`${name} added to cart!`);
+				});
+			});
+		});
+	</script>
+</body>
+
+</html>
