@@ -2,190 +2,212 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BY ELIA – Services</title>
+
+  <!-- Stylesheets -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <link href="css/tiny-slider.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+  <!-- Prevent Horizontal Overflow -->
   <style>
-    body { overflow-x: hidden; }
-    .feature .icon img { max-width: 100%; }
-    /* Chat, WhatsApp, Call button styles */
-    /* ... (your existing styles here) */
+    body {
+      overflow-x: hidden;
+    }
+    .feature .icon img {
+      max-width: 100%;
+    }
+
+    /* --- ASSISTANT, WHATSAPP, CALL BUTTONS STYLES --- */
+    .chatbot-icon {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      font-size: 22px;
+      padding: 12px 14px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 9999;
+      box-shadow: 0 0 8px rgba(0,0,0,0.3);
+    }
+
+    .chatbot-container {
+      display: none;
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      width: 270px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+      z-index: 9999;
+      font-family: Arial, sans-serif;
+    }
+
+    .chat-header {
+      background-color: #1c1c1c;
+      color: #fff;
+      padding: 10px;
+      font-weight: bold;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .chat-body {
+      padding: 10px;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    .chat-message {
+      margin-bottom: 10px;
+    }
+
+    .chat-options button {
+      display: block;
+      margin: 4px 0;
+      width: 100%;
+      padding: 8px;
+      background: #f5f5f5;
+      border: none;
+      border-radius: 4px;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .chat-options button:hover {
+      background-color: #e0e0e0;
+    }
+
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 9999;
+    }
+
+    .whatsapp-button img {
+      width: 42px;
+      height: 42px;
+    }
+
+    .call-button {
+      position: fixed;
+      bottom: 80px;
+      left: 20px;
+      z-index: 9999;
+      text-decoration: none;
+    }
+
+    .call-icon-wrapper {
+      display: flex;
+      align-items: center;
+      background-color: #fff;
+      border: 1px solid #4CAF50;
+      border-radius: 20px;
+      padding: 6px 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      transition: background 0.3s;
+    }
+
+    .call-icon-wrapper img {
+      width: 24px;
+      margin-right: 6px;
+    }
+
+    .call-text {
+      font-size: 14px;
+      color: #4CAF50;
+      font-weight: bold;
+    }
+
+    .call-icon-wrapper:hover {
+      background-color: #e8f5e9;
+    }
   </style>
 </head>
+
 <body>
 
-  <!-- Navbar -->
-  <nav class="custom-navbar navbar navbar-expand-md navbar-dark bg-dark" aria-label="Furni navigation bar">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">BY ELIA<span>.</span></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarsFurni">
-        <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li><a class="nav-link" href="shop.html">Shop</a></li>
-          <li><a class="nav-link" href="about.html">About us</a></li>
-          <li class="active"><a class="nav-link" href="services.html">Services</a></li>
-          <li><a class="nav-link" href="blog.html">Blog</a></li>
-          <li><a class="nav-link" href="contact.html">Contact us</a></li>
-        </ul>
-        <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-          <li><a class="nav-link" href="#"><img src="images/user.svg" alt="User"></a></li>
-          <li><a class="nav-link" href="cart.html"><img src="images/cart.svg" alt="Cart"></a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <!-- YOUR FULL SERVICES PAGE CONTENT COMES HERE -->
+  <!-- (Use the corrected HTML version we finalized before for navbar, hero, product, footer, etc.) -->
 
-  <!-- Hero -->
-  <div class="hero">
-    <div class="container">
-      <div class="row justify-content-between align-items-center">
-        <div class="col-lg-5">
-          <div class="intro-excerpt">
-            <h1>Services</h1>
-            <p class="mb-4">
-              From personalized jewelry selection to secure delivery, we offer a complete shopping experience designed around your
-              style, comfort, and trust. Whether you're buying for yourself or gifting someone special, our expert team is here to
-              guide you every step of the way.
-            </p>
-            <p>
-              <a href="shop.html" class="btn btn-secondary me-2">Shop Now</a>
-              <a href="#" class="btn btn-white-outline">Explore</a>
-            </p>
-          </div>
-        </div>
-        <div class="col-lg-7">
-          <div class="hero-img-wrap">
-            <img src="" class="img-fluid" alt="">
-          </div>
-        </div>
+  <!-- 💬 Assistant Button -->
+  <div class="chatbot-icon" onclick="toggleChat()" title="Chat Assistant">💬</div>
+
+  <!-- Assistant Chat Box -->
+  <div class="chatbot-container" id="chat-container">
+    <div class="chat-header">💬 Virtual Jewelry Assistant</div>
+    <div class="chat-body" id="chat-body">
+      <div class="chat-message bot">Hi! I'm your jewelry assistant. Ask me anything 💎</div>
+      <div class="chat-options">
+        <button onclick="respond('ring-size')">What ring size is best?</button>
+        <button onclick="respond('return-policy')">How do I return an item?</button>
+        <button onclick="respond('order-tracking')">When will my order arrive?</button>
+        <button onclick="respond('payment')">Payment methods?</button>
+        <button onclick="respond('contact')">Contact customer support</button>
       </div>
     </div>
   </div>
 
-  <!-- Why Choose Us -->
-  <div class="why-choose-section">
-    <div class="container">
-      <div class="row my-5">
-        <div class="col-6 col-md-6 col-lg-3 mb-4">
-          <div class="feature text-center">
-            <div class="icon mb-2"><img src="images/truck.svg" alt="Fast Shipping"></div>
-            <h3>Fast Shipping</h3>
-            <p>Because timeless beauty shouldn’t have to wait we ship quickly, so your sparkle arrives right when you need it.</p>
-          </div>
-        </div>
-        <div class="col-6 col-md-6 col-lg-3 mb-4">
-          <div class="feature text-center">
-            <div class="icon mb-2"><img src="images/bag.svg" alt="Easy to Shop"></div>
-            <h3>Easy to Shop</h3>
-            <p>A smooth, stress-free shopping experience from browsing to checkout, it’s simple, secure, and designed just for you.</p>
-          </div>
-        </div>
-        <div class="col-6 col-md-6 col-lg-3 mb-4">
-          <div class="feature text-center">
-            <div class="icon mb-2"><img src="images/support.svg" alt="24/7 Support"></div>
-            <h3>24/7 Support</h3>
-            <p>We're always here for you. Day or night, our support team is ready to assist with any questions, orders, or concerns.</p>
-          </div>
-        </div>
-        <div class="col-6 col-md-6 col-lg-3 mb-4">
-          <div class="feature text-center">
-            <div class="icon mb-2"><img src="images/return.svg" alt="Hassle Free Returns"></div>
-            <h3>Hassle Free Returns</h3>
-            <p>Changed your mind? No problem. Enjoy easy, no-stress returns within our return window—your satisfaction is guaranteed.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <!-- ✅ WhatsApp Button -->
+  <a href="https://wa.me/254700000000" target="_blank" class="whatsapp-button" title="Chat on WhatsApp">
+    <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp">
+  </a>
 
-  <!-- Products -->
-  <div class="product-section">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
-          <h2 class="mb-4 section-title">💎 Every Piece Tells a Story Make Yours Unforgettable</h2>
-          <p>we craft memories. Whether you're marking a milestone, gifting someone special, or treating yourself, our collections
-          are designed to celebrate life's most meaningful moments with beauty and brilliance.</p>
-          <p><a href="shop.html" class="btn">Explore</a></p>
-        </div>
-        <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-          <div class="product-item text-center">
-            <img src="images/Ear1.jpg" class="img-fluid product-thumbnail" alt="Earrings">
-            <h3 class="product-title">Earrings</h3>
-            <strong class="product-price">Ksh 200.00</strong>
-            <button class="btn btn-sm btn-primary add-to-cart mt-2">shop now</button>
-          </div>
-        </div>
-        <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-          <div class="product-item text-center">
-            <img src="images/ring.jpg" class="img-fluid product-thumbnail" alt="Ring">
-            <h3 class="product-title">Rings</h3>
-            <strong class="product-price">Ksh 180.00</strong>
-            <button class="btn btn-sm btn-primary add-to-cart mt-2">shop now</button>
-          </div>
-        </div>
-        <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
-          <div class="product-item text-center">
-            <img src="images/watch.jpg" class="img-fluid product-thumbnail" alt="Casio">
-            <h3 class="product-title">Casio</h3>
-            <strong class="product-price">Ksh 2,000.00</strong>
-            <button class="btn btn-sm btn-primary add-to-cart mt-2">shop now</button>
-          </div>
-        </div>
-      </div>
+  <!-- ✅ Call Button -->
+  <a href="tel:+254700000000" class="call-button" title="Call Us">
+    <div class="call-icon-wrapper">
+      <img src="https://img.icons8.com/color/48/4CAF50/phone.png" alt="Call">
+      <span class="call-text">Call</span>
     </div>
-  </div>
+  </a>
 
-  <!-- Footer -->
-  <footer class="footer-section">
-    <div class="container relative">
-      <div class="sofa-img text-center mb-4"><img src="images/OL logo.jpg" class="img-fluid" alt="Logo"></div>
-      <div class="row g-5 mb-5">
-        <div class="col-lg-4">
-          <a href="#" class="footer-logo">BY ELIA<span>.</span></a>
-          <p class="mb-4">we believe jewelry is more than an accessory it's a statement of your story. Explore our handcrafted collections of exquisite rings, necklaces, bracelets, and earrings designed to celebrate your unique moments. ✨ Ethically sourced. Uniquely yours. Perfectly timeless. Start your sparkle journey with us today.</p>
-          <ul class="list-unstyled custom-social">
-            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://instagram.com/__by.elia__"><i class="fab fa-instagram"></i></a></li>
-            <li><a href="https://tiktok.com/@__by.elia__"><i class="fab fa-tiktok"></i></a></li>
-          </ul>
-        </div>
-        <div class="col-lg-8">
-          <div class="row">
-            <div class="col-md-3">
-              <ul class="list-unstyled">
-                <li><a href="about.html">About us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="shop.html">shop now</a></li>
-                <li><a href="contact.html">Contact us</a></li>
-              </ul>
-            </div>
-            <div class="col-md-3">
-              <ul class="list-unstyled">
-                <li><a href="shop.html">shop</a></li>
-                <li><a href="#">Live chat</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="border-top py-4 text-center">
-        <p class="mb-0">&copy; <script>document.write(new Date().getFullYear());</script>. BY ELIA — Designed by Paps‑Designs — Tel: 0763497422</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Load JS -->
+  <!-- Scripts -->
   <script src="js/bootstrap.bundle.min.js"></script>
-  
-  <!-- Adjusted any button scripts/styles below (chat, whatsapp, call) -->
+  <script src="js/tiny-slider.js"></script>
+  <script src="js/custom.js"></script>
+
+  <!-- Assistant Chat JavaScript -->
+  <script>
+    function toggleChat() {
+      const chat = document.getElementById('chat-container');
+      chat.style.display = chat.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function respond(type) {
+      let response = '';
+      switch (type) {
+        case 'ring-size':
+          response = "Most women wear size 6–7. Use our chart or visit a jeweler for sizing.";
+          break;
+        case 'return-policy':
+          response = "Returns accepted within 7 days if unused and in original packaging.";
+          break;
+        case 'order-tracking':
+          response = "Orders ship within 1-2 days. You'll receive a tracking number via email or SMS.";
+          break;
+        case 'payment':
+          response = "We accept M-Pesa, PayPal, and major cards.";
+          break;
+        case 'contact':
+          response = "Call us: +254700000000 or WhatsApp us anytime.";
+          break;
+        default:
+          response = "Sorry, I didn’t understand that. Please try another question!";
+      }
+
+      const chatBody = document.getElementById('chat-body');
+      const message = document.createElement('div');
+      message.className = 'chat-message bot';
+      message.textContent = response;
+      chatBody.appendChild(message);
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }
+  </script>
 
 </body>
 </html>
