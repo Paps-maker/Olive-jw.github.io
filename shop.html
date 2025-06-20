@@ -63,49 +63,46 @@
 		</div>
 	</div>
 	<!-- Ring Size Guide Section -->
-<section class="container my-5 py-4 border rounded mx-auto" style="max-width:600px;">
-	<h4 class="mb-3 text-center">💍 Find Your Ring Size</h4>
-  
-	<!-- Calculator Row -->
-	<div class="row gx-2 align-items-center mb-3">
-	  <div class="col-5">
-		<input type="number" id="diameter" class="form-control" placeholder="Diameter (mm)">
-	  </div>
-	  <div class="col-auto">
-		<button class="btn btn-primary" onclick="calcSize()">Calc</button>
-	  </div>
-	  <div class="col">
-		<input type="text" id="ringSizeUS" class="form-control" placeholder="US Size" readonly>
-	  </div>
-	  <div class="col">
-		<input type="text" id="ringSizeUK" class="form-control" placeholder="UK Size" readonly>
-	  </div>
-	</div>
-  
-	<!-- Reference Chart Image -->
-	
-  </section>
-  
-  <!-- JS Script -->
-  <script>
-  function calcSize() {
-	const dia = parseFloat(document.getElementById('diameter').value);
-	if (!dia || dia < 8 || dia > 25) {
-	  document.getElementById('ringSizeUS').value = 'Invalid';
-	  document.getElementById('ringSizeUK').value = '';
-	  return;
-	}
-  
-	// US size approximate
-	const us = ((dia - 11.63) / 0.812).toFixed(1);
-	document.getElementById('ringSizeUS').value = us;
-  
-	// Convert US to UK
-	const ukIndex = Math.round((parseFloat(us) + 0.5) * 2);
-	const ukSizes = ["-", "A", "A½", "B", "B½", "C", "C½", "D", "D½", "E", "E½", "F", "F½", "G", "G½", "H", "H½", "I", "I½", "J", "J½", "K", "K½", "L", "L½", "M", "M½", "N", "N½", "O", "O½", "P", "P½", "Q", "Q½", "R", "R½", "S", "S½", "T"];
-	document.getElementById('ringSizeUK').value = ukSizes[ukIndex] || '';
+<!-- Ring Size Guide Section -->
+<section class="container my-5 py-4 px-3 border rounded shadow-sm">
+  <h4 class="mb-4 text-center">💍 Find Your Ring Size</h4>
+
+  <!-- Responsive Calculator -->
+  <div class="row gy-3">
+    <div class="col-12 col-sm-6 col-md-3">
+      <input type="number" id="diameter" class="form-control" placeholder="Diameter (mm)">
+    </div>
+    <div class="col-12 col-sm-6 col-md-2">
+      <button class="btn btn-primary w-100" onclick="calcSize()">Calc</button>
+    </div>
+    <div class="col-12 col-sm-6 col-md-3">
+      <input type="text" id="ringSizeUS" class="form-control" placeholder="US Size" readonly>
+    </div>
+    <div class="col-12 col-sm-6 col-md-3">
+      <input type="text" id="ringSizeUK" class="form-control" placeholder="UK Size" readonly>
+    </div>
+  </div>
+</section>
+
+<!-- JS Script -->
+<script>
+function calcSize() {
+  const dia = parseFloat(document.getElementById('diameter').value);
+  if (!dia || dia < 8 || dia > 25) {
+    document.getElementById('ringSizeUS').value = 'Invalid';
+    document.getElementById('ringSizeUK').value = '';
+    return;
   }
-  </script>
+
+  const us = ((dia - 11.63) / 0.812).toFixed(1);
+  document.getElementById('ringSizeUS').value = us;
+
+  const ukIndex = Math.round((parseFloat(us) + 0.5) * 2);
+  const ukSizes = ["-", "A", "A½", "B", "B½", "C", "C½", "D", "D½", "E", "E½", "F", "F½", "G", "G½", "H", "H½", "I", "I½", "J", "J½", "K", "K½", "L", "L½", "M", "M½", "N", "N½", "O", "O½", "P", "P½", "Q", "Q½", "R", "R½", "S", "S½", "T"];
+  document.getElementById('ringSizeUK').value = ukSizes[ukIndex] || '';
+}
+</script>
+
   
 
 	<!-- Products -->
